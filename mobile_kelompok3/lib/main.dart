@@ -107,11 +107,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 ElevatedButton(onPressed: _tambah, child: const Text('+')),
               ],
             ),
-
+            const SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const SizedBox(height: 20),
                 ElevatedButton(onPressed: _simpan, child: const Text('Simpan')),
               ],
             ),
