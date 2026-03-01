@@ -24,7 +24,6 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
-
   final String title;
 
   @override
@@ -53,7 +52,6 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _simpan() {
-    // Logika untuk menyimpan data (contoh: print ke console)
     print('Angka disimpan: $_counter');
 
     ScaffoldMessenger.of(
@@ -72,7 +70,12 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Tulisan merah bebas
+            // ================== STATELESS ==================
+            const TulisanStateless(),
+
+            const SizedBox(height: 20),
+
+            // ================== STATEFUL ==================
             const Text(
               'INI ADALAH CONTOH STATEFUL',
               style: TextStyle(
@@ -96,7 +99,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
             const SizedBox(height: 20),
 
-            // Varian tombol
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -107,15 +109,28 @@ class _MyHomePageState extends State<MyHomePage> {
                 ElevatedButton(onPressed: _tambah, child: const Text('+')),
               ],
             ),
+
             const SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(onPressed: _simpan, child: const Text('Simpan')),
-              ],
-            ),
+
+            ElevatedButton(onPressed: _simpan, child: const Text('Simpan')),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class TulisanStateless extends StatelessWidget {
+  const TulisanStateless({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Text(
+      'INI MERUPAKAN TUGAS DARI KELOMPOK 3 GOLONGAN E',
+      style: TextStyle(
+        color: Colors.blue,
+        fontSize: 18,
+        fontWeight: FontWeight.bold,
       ),
     );
   }
