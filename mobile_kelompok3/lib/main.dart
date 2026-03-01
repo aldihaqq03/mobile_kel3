@@ -52,6 +52,15 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void _simpan() {
+    // Logika untuk menyimpan data (contoh: print ke console)
+    print('Angka disimpan: $_counter');
+
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(SnackBar(content: Text('Angka disimpan: $_counter')));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -96,6 +105,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 ElevatedButton(onPressed: _reset, child: const Text('Reset')),
                 const SizedBox(width: 10),
                 ElevatedButton(onPressed: _tambah, child: const Text('+')),
+              ],
+            ),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const SizedBox(height: 20),
+                ElevatedButton(onPressed: _simpan, child: const Text('Simpan')),
               ],
             ),
           ],
