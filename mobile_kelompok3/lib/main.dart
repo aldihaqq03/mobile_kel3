@@ -52,8 +52,6 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _simpan() {
-    print('Angka disimpan: $_counter');
-
     ScaffoldMessenger.of(
       context,
     ).showSnackBar(SnackBar(content: Text('Angka disimpan: $_counter')));
@@ -112,7 +110,19 @@ class _MyHomePageState extends State<MyHomePage> {
 
             const SizedBox(height: 10),
 
+            // ================== TOMBOL SIMPAN ==================
             ElevatedButton(onPressed: _simpan, child: const Text('Simpan')),
+
+            const SizedBox(height: 10),
+
+            Text(
+              'Nilai terakhir adalah $_counter',
+              style: const TextStyle(
+                fontSize: 16,
+                color: Colors.green,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
           ],
         ),
       ),
